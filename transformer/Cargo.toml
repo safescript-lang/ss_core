@@ -1,0 +1,11 @@
+[package]
+name = "safescript-transformer"
+description = "Transformer for SafeScript"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "lib.rs"
