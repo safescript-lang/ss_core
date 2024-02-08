@@ -1,6 +1,6 @@
 [package]
-name = "safescript-parser"
-description = "Parser for SafeScript"
+name = "safescript-vm"
+description = "Virtual Mashine for SafeScript"
 version.workspace = true
 authors.workspace = true
 repository.workspace = true
@@ -9,3 +9,7 @@ license.workspace = true
 
 [lib]
 path = "lib.rs"
+
+[dependencies.common]
+package = "safescript-common"
+path = "../common"

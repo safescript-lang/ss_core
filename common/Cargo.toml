@@ -1,6 +1,6 @@
 [package]
-name = "safescript-interpreter"
-description = "Interpreter for SafeScript"
+name = "safescript-common"
+description = "Common items for all SafeScript use cases"
 version.workspace = true
 authors.workspace = true
 repository.workspace = true

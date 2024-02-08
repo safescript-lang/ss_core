@@ -1,14 +1,14 @@
 [workspace]
 resolver = "2"
 members = [
-    "parser",
+    "common",
 
     "transformer",
     "transformer/transformer-util",
 
     "compiler",
 
-    "interpreter",
+    "vm",
 ]
 
 [workspace.package]
