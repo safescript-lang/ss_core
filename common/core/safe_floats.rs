@@ -8,8 +8,15 @@ macro_rules! f {
 }
 
 macro_rules! safe_float {
-    ($name:ident $type:tt) => (
+    (
+        $(
+            $(#[$attr:meta])*
+            $name:ident($type:tt)
+        )+
+    ) => ( $(
+        $(#[$attr])*
         #[repr(transparent)]
+        #[allow(non_camel_case_types)]
         #[derive(Default, Debug, Clone, Copy)]
         pub struct $name($type);
 
@@ -41,8 +48,21 @@ macro_rules! safe_float {
                 self.0.fmt(f)
             }
         }
-    )
+    )+ );
 }
 
-safe_float!(Safe32 f32);
-safe_float!(Safe64 f64);
+safe_float!{
+    /// A safe 32-bit floating point number.
+    /// 
+    /// This is a wrapper around `f32` that implements `PartialEq` and `Eq` for `NaN`.
+    /// It is preferred to use this type over `f32` when comparing floating point numbers.
+    /// And is used all over SafeScript to represent floating point numbers.
+    sf32(f32)
+
+    /// A safe 64-bit floating point number.
+    /// 
+    /// This is a wrapper around `f64` that implements `PartialEq` and `Eq` for `NaN`.
+    /// It is preferred to use this type over `f64` when comparing floating point numbers.
+    /// And is used all over SafeScript to represent floating point numbers.
+    sf64(f64)
+}

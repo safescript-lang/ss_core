@@ -14,6 +14,10 @@ path = "lib.rs"
 package = "rubbernum"
 path = "../rubbernum"
 
+[dependencies.commoncore]
+package = "safescript-common-core"
+path = "../core"
+
 [features]
 nightly = ["rubbernum/nightly"]
 std = ["rubbernum/std"]
