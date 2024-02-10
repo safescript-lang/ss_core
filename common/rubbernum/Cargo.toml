@@ -1,6 +1,6 @@
 [package]
-name = "safescript-common"
-description = "Common items for all SafeScript use cases"
+name = "rubbernum"
+description = "Stretchy numbers for Rust"
 version.workspace = true
 authors.workspace = true
 repository.workspace = true
@@ -10,6 +10,6 @@ license.workspace = true
 [lib]
 path = "lib.rs"
 
-[dependencies.parser]
-package = "safescript-parser"
-path = "./parser"
+[features]
+nightly = []
+std = []

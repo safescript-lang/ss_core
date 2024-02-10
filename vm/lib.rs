@@ -54,7 +54,7 @@ impl Vm {
         
     }
     pub fn run_string<T: ToString>(&mut self, code: T) -> Result {
-        let _tokenstream = common::tokens::parse(code);
+        // let _tokenstream = common::parser::parse(code);
 
         Ok(())
     }
